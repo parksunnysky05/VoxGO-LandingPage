@@ -48,6 +48,7 @@
     }
 
     /* BUTTON */
+
     .btn {
       display: inline-block;
       background: var(--blue);
@@ -63,11 +64,13 @@
     }
 
     /* HEADER */
+
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(248,247,244,0.95);
+      z-index: 20;
+      background: rgba(248, 247, 244, 0.95);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid #e5e5e5;
     }
 
@@ -84,16 +87,31 @@
     }
 
     /* HERO */
+
     .hero {
-      padding: 70px 0;
-      background: linear-gradient(135deg, #F8F7F4, #EEF4FF);
+      min-height: 680px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(248,247,244,0.98) 0%,
+          rgba(248,247,244,0.94) 27%,
+          rgba(248,247,244,0.68) 48%,
+          rgba(248,247,244,0.15) 72%,
+          rgba(248,247,244,0.02) 100%
+        ),
+        url("hero-travel.png");
+
+      background-size: cover;
+      background-position: center;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.05fr;
-      gap: 55px;
-      align-items: center;
+    .hero-content {
+      max-width: 650px;
+      padding: 90px 0;
     }
 
     .eyebrow {
@@ -120,23 +138,12 @@
     .hero-text {
       color: var(--gray);
       font-size: 1.08rem;
-      max-width: 600px;
+      max-width: 570px;
       margin-bottom: 30px;
     }
 
-    .hero-image {
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 22px 55px rgba(16,26,43,0.15);
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 510px;
-      object-fit: cover;
-    }
-
     /* GENERAL SECTIONS */
+
     section {
       padding: 88px 0;
     }
@@ -160,6 +167,7 @@
     }
 
     /* BENEFITS */
+
     .benefits {
       background: white;
     }
@@ -201,6 +209,7 @@
     }
 
     /* USE CASES */
+
     .use-cases {
       background: var(--navy);
     }
@@ -262,6 +271,7 @@
     }
 
     /* TESTIMONIALS */
+
     .testimonials {
       background: var(--sand);
     }
@@ -303,6 +313,7 @@
     }
 
     /* PRODUCT */
+
     .product {
       background: white;
     }
@@ -350,6 +361,7 @@
     }
 
     /* FAQ */
+
     .faq {
       background: var(--white);
     }
@@ -378,6 +390,7 @@
     }
 
     /* FINAL CTA */
+
     .final-cta {
       background: linear-gradient(135deg, var(--blue), #0F55B9);
       color: white;
@@ -403,6 +416,7 @@
     }
 
     /* CONTACT */
+
     .contact {
       background: white;
     }
@@ -437,6 +451,7 @@
     }
 
     /* FOOTER */
+
     footer {
       background: var(--navy);
       color: white;
@@ -467,11 +482,26 @@
     }
 
     /* MOBILE */
+
     @media (max-width: 900px) {
-      .hero-grid,
-      .product-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
+
+      .hero {
+        min-height: 650px;
+
+        background-image:
+          linear-gradient(
+            90deg,
+            rgba(248,247,244,0.97) 0%,
+            rgba(248,247,244,0.88) 42%,
+            rgba(248,247,244,0.25) 100%
+          ),
+          url("hero-travel.png");
+
+        background-position: center;
+      }
+
+      .hero-content {
+        max-width: 600px;
       }
 
       .benefit-grid {
@@ -482,9 +512,15 @@
       .testimonial-grid {
         grid-template-columns: 1fr;
       }
+
+      .product-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 560px) {
+
       .container {
         width: calc(100% - 28px);
       }
@@ -503,11 +539,17 @@
       }
 
       .hero {
-        padding: 52px 0;
+        min-height: 680px;
+        background-position: 65% center;
       }
 
-      .hero-image img {
-        height: 340px;
+      .hero-content {
+        padding: 70px 0;
+      }
+
+      h1 {
+        font-size: 3rem;
+        letter-spacing: -2px;
       }
 
       .benefit-grid,
@@ -523,6 +565,10 @@
         height: 380px;
       }
 
+      .product-image img {
+        height: 380px;
+      }
+
       .footer-row {
         align-items: flex-start;
         flex-direction: column;
@@ -534,13 +580,21 @@
 <body>
 
   <!-- HEADER -->
+
   <header>
     <div class="container nav">
+
       <a href="#">
-        <img src="voxgo-logo.png" class="logo" alt="VoxGo">
+        <img
+          src="voxgo-logo.png"
+          class="logo"
+          alt="VoxGo">
       </a>
 
-      <a href="#shop" class="btn">SHOP VOXGO</a>
+      <a href="#shop" class="btn">
+        SHOP VOXGO
+      </a>
+
     </div>
   </header>
 
@@ -548,11 +602,16 @@
   <main>
 
     <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
 
-        <div>
-          <div class="eyebrow">VoxGo, Understood, Anywhere</div>
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            VoxGo, Understood, Anywhere
+          </div>
 
           <h1>
             Understand and be understood,
@@ -568,75 +627,118 @@
           <a href="#shop" class="btn">
             SHOP VOXGO →
           </a>
-        </div>
 
-        <div class="hero-image">
-          <img
-            src="hero-travel.png"
-            alt="VoxGo earbuds in a travel setting">
         </div>
 
       </div>
+
     </section>
 
 
     <!-- BENEFITS -->
+
     <section class="benefits">
+
       <div class="container">
 
         <div class="section-heading">
-          <h2>Communication that keeps up with you.</h2>
+
+          <h2>
+            Communication that keeps up with you.
+          </h2>
 
           <p>
             Designed for real conversations at work, abroad,
             and wherever your next connection takes you.
           </p>
+
         </div>
+
 
         <div class="benefit-grid">
 
           <div class="benefit">
-            <div class="icon">40+</div>
-            <h3>40+ Languages</h3>
+
+            <div class="icon">
+              40+
+            </div>
+
+            <h3>
+              40+ Languages
+            </h3>
+
             <p>
               Communicate across languages with real-time translation.
             </p>
+
           </div>
 
+
           <div class="benefit">
-            <div class="icon">OFF</div>
-            <h3>Offline Support</h3>
+
+            <div class="icon">
+              OFF
+            </div>
+
+            <h3>
+              Offline Support
+            </h3>
+
             <p>
               Stay connected even when reliable internet isn't available.
             </p>
+
           </div>
 
+
           <div class="benefit">
-            <div class="icon">↔</div>
-            <h3>Hands-Free</h3>
+
+            <div class="icon">
+              ↔
+            </div>
+
+            <h3>
+              Hands-Free
+            </h3>
+
             <p>
               Keep conversations moving without reaching for your phone.
             </p>
+
           </div>
 
+
           <div class="benefit">
-            <div class="icon">◉</div>
-            <h3>Noise Cancellation</h3>
+
+            <div class="icon">
+              ◉
+            </div>
+
+            <h3>
+              Noise Cancellation
+            </h3>
+
             <p>
               Hear conversations more clearly in noisy environments.
             </p>
+
           </div>
 
         </div>
+
       </div>
+
     </section>
 
 
     <!-- USE CASES -->
+
     <section class="use-cases">
+
       <div class="container">
 
         <div class="section-heading">
+
           <h2>
             Wherever life takes you, communicate with confidence.
           </h2>
@@ -646,71 +748,109 @@
             language learning, VoxGo helps make communication feel
             more natural.
           </p>
+
         </div>
+
 
         <div class="use-grid">
 
           <div class="use-card">
-            <img src="work.png"
-                 alt="Filipino professional using VoxGo at work">
+
+            <img
+              src="work.png"
+              alt="Filipino professional using VoxGo at work">
 
             <div class="use-text">
-              <h3>Work</h3>
+
+              <h3>
+                Work
+              </h3>
+
               <p>
                 Make conversations with international coworkers
                 and clients easier.
               </p>
+
             </div>
+
           </div>
 
 
           <div class="use-card">
-            <img src="travel.png"
-                 alt="Filipino traveler using VoxGo abroad">
+
+            <img
+              src="travel.png"
+              alt="Filipino traveler using VoxGo abroad">
 
             <div class="use-text">
-              <h3>Travel</h3>
+
+              <h3>
+                Travel
+              </h3>
+
               <p>
                 Go farther without the language barrier.
               </p>
+
             </div>
+
           </div>
 
 
           <div class="use-card">
-            <img src="learn-connect.png"
-                 alt="Young Filipino language learner using VoxGo">
+
+            <img
+              src="learn-connect.png"
+              alt="Young Filipino language learner using VoxGo">
 
             <div class="use-text">
-              <h3>Learn &amp; Connect</h3>
+
+              <h3>
+                Learn &amp; Connect
+              </h3>
+
               <p>
                 Understand more of the languages you love.
               </p>
+
             </div>
+
           </div>
 
         </div>
+
       </div>
+
     </section>
 
 
     <!-- SOCIAL PROOF -->
+
     <section class="testimonials">
+
       <div class="container">
 
         <div class="section-heading">
-          <h2>Made for conversations that matter.</h2>
+
+          <h2>
+            Made for conversations that matter.
+          </h2>
 
           <p>
             Sample campaign testimonials based on the audience
             needs identified in our campaign strategy.
           </p>
+
         </div>
+
 
         <div class="testimonial-grid">
 
           <div class="testimonial">
-            <div class="stars">★★★★★</div>
+
+            <div class="stars">
+              ★★★★★
+            </div>
 
             <p>
               “I love that I don't have to keep reaching for my phone
@@ -718,13 +858,24 @@
               feel much easier.”
             </p>
 
-            <strong>Mia</strong><br>
-            <small>Filipino Professional</small>
+            <strong>
+              Mia
+            </strong>
+
+            <br>
+
+            <small>
+              Filipino Professional
+            </small>
+
           </div>
 
 
           <div class="testimonial">
-            <div class="stars">★★★★★</div>
+
+            <div class="stars">
+              ★★★★★
+            </div>
 
             <p>
               “I've been learning Korean, and having translation support
@@ -732,13 +883,24 @@
               intimidating.”
             </p>
 
-            <strong>Alyssa</strong><br>
-            <small>Language Learner</small>
+            <strong>
+              Alyssa
+            </strong>
+
+            <br>
+
+            <small>
+              Language Learner
+            </small>
+
           </div>
 
 
           <div class="testimonial">
-            <div class="stars">★★★★★</div>
+
+            <div class="stars">
+              ★★★★★
+            </div>
 
             <p>
               “The offline support is what caught my attention.
@@ -746,89 +908,152 @@
               traveling and can't rely on a stable connection.”
             </p>
 
-            <strong>Mark</strong><br>
-            <small>Frequent Traveler</small>
+            <strong>
+              Mark
+            </strong>
+
+            <br>
+
+            <small>
+              Frequent Traveler
+            </small>
+
           </div>
 
         </div>
+
 
         <div class="sample-note">
           *Sample campaign testimonials for prototype demonstration.
         </div>
 
       </div>
+
     </section>
 
 
     <!-- PRODUCT -->
+
     <section class="product">
+
       <div class="container product-grid">
 
         <div class="product-image">
+
           <img
             src="product-shot.png"
             alt="VoxGo earbuds and charging case">
+
         </div>
+
 
         <div>
 
-          <div class="eyebrow">Built for real conversations</div>
+          <div class="eyebrow">
+            Built for real conversations
+          </div>
 
           <div class="section-heading">
-            <h2>Technology designed for real conversations.</h2>
+
+            <h2>
+              Technology designed for real conversations.
+            </h2>
 
             <p>
               Stay hands-free, communicate across languages,
               and feel more confident wherever the conversation
               takes you.
             </p>
+
           </div>
+
 
           <div class="features">
 
             <div class="feature">
-              <strong>40+ Languages</strong>
-              <span>Real-time translation</span>
+
+              <strong>
+                40+ Languages
+              </strong>
+
+              <span>
+                Real-time translation
+              </span>
+
             </div>
 
-            <div class="feature">
-              <strong>Offline Support</strong>
-              <span>Support beyond reliable internet</span>
-            </div>
 
             <div class="feature">
-              <strong>Voice Commands</strong>
-              <span>Hands-free interaction</span>
+
+              <strong>
+                Offline Support
+              </strong>
+
+              <span>
+                Support beyond reliable internet
+              </span>
+
             </div>
 
+
             <div class="feature">
-              <strong>Noise Cancellation</strong>
-              <span>Clearer conversations</span>
+
+              <strong>
+                Voice Commands
+              </strong>
+
+              <span>
+                Hands-free interaction
+              </span>
+
+            </div>
+
+
+            <div class="feature">
+
+              <strong>
+                Noise Cancellation
+              </strong>
+
+              <span>
+                Clearer conversations
+              </span>
+
             </div>
 
           </div>
 
         </div>
+
       </div>
+
     </section>
 
 
     <!-- FAQ -->
+
     <section class="faq">
+
       <div class="container">
 
         <div class="section-heading">
-          <h2>Questions before you go?</h2>
+
+          <h2>
+            Questions before you go?
+          </h2>
 
           <p>
             Quick answers to the things you may want to know
             before choosing VoxGo.
           </p>
+
         </div>
+
 
         <div class="faq-list">
 
           <details class="faq-item">
+
             <summary>
               How many languages does VoxGo support?
             </summary>
@@ -836,10 +1061,12 @@
             <p>
               VoxGo supports 40+ languages.
             </p>
+
           </details>
 
 
           <details class="faq-item">
+
             <summary>
               Can VoxGo work without internet?
             </summary>
@@ -847,10 +1074,12 @@
             <p>
               Yes. VoxGo includes offline support.
             </p>
+
           </details>
 
 
           <details class="faq-item">
+
             <summary>
               Can I use VoxGo hands-free?
             </summary>
@@ -859,10 +1088,12 @@
               Yes. VoxGo is designed for hands-free communication
               and includes voice commands.
             </p>
+
           </details>
 
 
           <details class="faq-item">
+
             <summary>
               Does VoxGo help in noisy environments?
             </summary>
@@ -871,52 +1102,79 @@
               VoxGo includes noise cancellation to support
               clearer conversations.
             </p>
+
           </details>
 
         </div>
+
       </div>
+
     </section>
 
 
     <!-- FINAL CTA -->
-    <section class="final-cta" id="shop">
+
+    <section
+      class="final-cta"
+      id="shop">
+
       <div class="container">
 
-        <h2>Ready to communicate without limits?</h2>
+        <h2>
+          Ready to communicate without limits?
+        </h2>
 
         <p>
           Wherever you work, travel, or connect, VoxGo helps you
           communicate across languages with more confidence.
         </p>
 
-        <a href="#contact" class="btn">
+        <a
+          href="#contact"
+          class="btn">
+
           SHOP VOXGO →
+
         </a>
 
       </div>
+
     </section>
 
 
     <!-- CONTACT -->
-    <section class="contact" id="contact">
+
+    <section
+      class="contact"
+      id="contact">
+
       <div class="container contact-grid">
 
         <div>
-          <div class="eyebrow">Need help?</div>
+
+          <div class="eyebrow">
+            Need help?
+          </div>
 
           <div class="section-heading">
-            <h2>Have a question about VoxGo?</h2>
+
+            <h2>
+              Have a question about VoxGo?
+            </h2>
 
             <p>
               Leave your email and message. This form is a
               campaign prototype for demonstration.
             </p>
+
           </div>
+
         </div>
 
 
-        <form class="form"
-              onsubmit="event.preventDefault(); alert('Thanks! This is a demonstration form.');">
+        <form
+          class="form"
+          onsubmit="event.preventDefault(); alert('Thanks! This is a demonstration form.');">
 
           <input
             type="email"
@@ -924,27 +1182,36 @@
             required>
 
           <textarea
-            placeholder="How can we help?"></textarea>
+            placeholder="How can we help?">
+          </textarea>
 
-          <button type="submit" class="btn">
+          <button
+            type="submit"
+            class="btn">
+
             SEND INQUIRY
+
           </button>
 
         </form>
 
       </div>
+
     </section>
 
   </main>
 
 
   <!-- FOOTER -->
+
   <footer>
+
     <div class="container">
 
       <div class="footer-row">
 
         <div>
+
           <img
             src="voxgo-logo.png"
             class="footer-logo"
@@ -953,23 +1220,39 @@
           <p>
             Anywhere, anytime, any language.
           </p>
+
         </div>
 
+
         <div>
-          <a href="#contact">Contact</a>
+
+          <a href="#contact">
+            Contact
+          </a>
+
           &nbsp; · &nbsp;
-          <a href="#">Privacy</a>
+
+          <a href="#">
+            Privacy
+          </a>
+
           &nbsp; · &nbsp;
-          <a href="#">Terms</a>
+
+          <a href="#">
+            Terms
+          </a>
+
         </div>
 
       </div>
+
 
       <div class="footer-note">
         Campaign prototype • For demonstration only
       </div>
 
     </div>
+
   </footer>
 
 </body>
