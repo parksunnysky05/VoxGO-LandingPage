@@ -297,15 +297,15 @@
       display: grid;
 
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(5, 1fr);
 
-      gap: 18px;
+      gap: 16px;
     }
 
     .benefit {
       position: relative;
 
-      padding: 28px;
+      padding: 26px 22px;
 
       min-height: 245px;
 
@@ -934,6 +934,7 @@
     }
 
     .form input,
+    .form select,
     .form textarea {
       width: 100%;
 
@@ -956,6 +957,7 @@
     }
 
     .form input:focus,
+    .form select:focus,
     .form textarea:focus {
       border-color: var(--blue);
 
@@ -1241,10 +1243,10 @@
 
 
       <a
-        href="#shop"
+        href="#contact"
         class="btn">
 
-        SHOP VOXGO
+        GET NOTIFIED
 
       </a>
 
@@ -1289,10 +1291,10 @@
 
 
           <a
-            href="#shop"
+            href="#contact"
             class="btn">
 
-            SHOP VOXGO
+            GET NOTIFIED AT LAUNCH
             <span>→</span>
 
           </a>
@@ -1396,6 +1398,24 @@
             <p>
               Hear conversations more clearly
               in noisy environments.
+            </p>
+
+          </div>
+
+
+          <div class="benefit">
+
+            <div class="icon">
+              ◎
+            </div>
+
+            <h3>
+              Voice Commands
+            </h3>
+
+            <p>
+              Start, pause, or switch languages
+              with simple voice prompts.
             </p>
 
           </div>
@@ -1641,7 +1661,7 @@
         <div>
 
           <div class="eyebrow">
-            Built for real conversations
+            The VoxGo Earbuds
           </div>
 
 
@@ -1751,56 +1771,79 @@
 
 
           <details class="faq-item">
-
             <summary>
               How many languages does VoxGo support?
             </summary>
-
             <p>
-              VoxGo supports 40+ languages.
+              VoxGo translates in real time across 40+ languages,
+              including languages Filipinos often need at work and
+              abroad, such as English, Japanese, Korean, Mandarin,
+              and Arabic. Whether you are talking to a manager in
+              Dubai or ordering food in Seoul, you can keep the
+              conversation going without stopping to type.
             </p>
-
           </details>
 
 
           <details class="faq-item">
-
             <summary>
               Can VoxGo work without internet?
             </summary>
-
             <p>
-              Yes. VoxGo includes offline support.
+              Yes. VoxGo has an offline mode, so you can still
+              translate when Wi-Fi is weak or mobile data is
+              expensive, like in airports, on the road, or during
+              your first weeks in a new country. For the widest
+              language coverage, connect to the internet when you can.
             </p>
-
           </details>
 
 
           <details class="faq-item">
-
             <summary>
-              Can I use VoxGo hands-free?
+              How is VoxGo different from free translation apps?
             </summary>
-
             <p>
-              Yes. VoxGo is designed for hands-free
-              communication and includes voice commands.
+              Free apps make you hold your phone, type or tap, and
+              pass it back and forth mid-conversation. With VoxGo,
+              the translation plays right in your ear, so you can
+              keep eye contact and talk naturally, hands-free.
             </p>
-
           </details>
 
 
           <details class="faq-item">
-
             <summary>
               Does VoxGo help in noisy environments?
             </summary>
-
             <p>
-              VoxGo includes noise cancellation to support
-              clearer conversations.
+              Yes. Noise cancellation filters background sound so
+              voices come through more clearly in busy offices,
+              markets, terminals, and public transport.
             </p>
+          </details>
 
+
+          <details class="faq-item">
+            <summary>
+              How do I control VoxGo hands-free?
+            </summary>
+            <p>
+              Use simple voice commands to start, pause, or switch
+              languages, with no need to reach for your phone.
+            </p>
+          </details>
+
+
+          <details class="faq-item">
+            <summary>
+              How much does VoxGo cost?
+            </summary>
+            <p>
+              Pricing will be announced at launch.
+              <a href="#contact" style="color: var(--blue); font-weight: 700;">Get notified</a>
+              to be the first to know.
+            </p>
           </details>
 
 
@@ -1817,25 +1860,26 @@
 
     <section
       class="final-cta"
-      id="shop">
+      id="launch">
 
       <div class="container">
 
         <h2>
-          Ready to communicate without limits?
+          Be the first to try VoxGo.
         </h2>
 
         <p>
           Wherever you work, travel, or connect, VoxGo
           helps you communicate across languages
-          with more confidence.
+          with more confidence. Leave your email and
+          we'll let you know when it launches.
         </p>
 
         <a
           href="#contact"
           class="btn">
 
-          SHOP VOXGO
+          GET NOTIFIED AT LAUNCH
           <span>→</span>
 
         </a>
@@ -1859,20 +1903,20 @@
         <div>
 
           <div class="eyebrow">
-            Need help?
+            Get notified
           </div>
 
 
           <div class="section-heading">
 
             <h2>
-              Have a question about VoxGo?
+              Be first in line for VoxGo.
             </h2>
 
             <p>
-              Leave your email and message.
-              This form is a campaign prototype
-              for demonstration.
+              Leave your email to get launch updates,
+              or send us a question. This form is a
+              campaign prototype for demonstration.
             </p>
 
           </div>
@@ -1882,7 +1926,7 @@
 
         <form
           class="form"
-          onsubmit="event.preventDefault(); alert('Thanks! This is a demonstration form.');">
+          onsubmit="event.preventDefault(); alert('Thanks! You are on the VoxGo launch list. (Demonstration form)');">
 
 
           <input
@@ -1891,15 +1935,24 @@
             required>
 
 
+          <select required>
+            <option value="" disabled selected>I am a...</option>
+            <option>OFW / working abroad</option>
+            <option>Working professional</option>
+            <option>Student / language learner</option>
+            <option>Traveler</option>
+          </select>
+
+
           <textarea
-            placeholder="How can we help?"></textarea>
+            placeholder="Any questions? (optional)"></textarea>
 
 
           <button
             type="submit"
             class="btn">
 
-            SEND INQUIRY
+            GET NOTIFIED
 
           </button>
 
@@ -1949,14 +2002,8 @@
 
           &nbsp; · &nbsp;
 
-          <a href="#">
-            Privacy
-          </a>
-
-          &nbsp; · &nbsp;
-
-          <a href="#">
-            Terms
+          <a href="#launch">
+            Get Notified
           </a>
 
         </div>
